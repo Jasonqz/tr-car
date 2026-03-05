@@ -1,0 +1,5 @@
+com\example\vehicle_server\service\impl\DataServiceImpl.class
+com\example\vehicle_server\controller\ScreenController.class
+com\example\vehicle_server\service\DataService.class
+com\example\vehicle_server\VehicleServerApplication.class
+com\example\vehicle_server\mapper\DataMapper.class

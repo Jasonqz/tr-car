@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.vehicle_server.mapper.DataMapper">
+    <!--resultType：单条记录所封装的类型-->
+    <select id="getCountsByName" resultType="java.lang.Integer">
+        select COUNT(*) from ${tableName}
+    </select>
+
+    <select id="getAllTableNames" resultType="java.lang.String">
+        select table_name from information_schema.tables where table_schema = 'db01'
+    </select>
+
+    <select id="getByTime" resultType="com.example.vehicle_server.pojo.DataEntity">
+        select * from test_table where time like concat('%', #{time}, '%')
+    </select>
+
+    <select id="getTimesByTableName" resultType="java.time.LocalDateTime">
+        select time from ${tableName}
+    </select>
+</mapper>
